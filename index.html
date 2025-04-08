@@ -3,32 +3,136 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cafetería Solar</title>
-  <link rel="stylesheet" href="css/global.css" />
+  <title>Cafetería Solar - Página Principal</title>
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-KE6qwOtgUu+eJZCds1v+RlJjhTzOlQHS8aqMMFVsV65mk1HcMuSSVQ3p+hXvY83f"
+    crossorigin="anonymous"
+  />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header>
-    <h1>Cafetería Solar ☕</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="secciones/galeria.html">Galería</a></li>
-        <li><a href="secciones/sobre-nosotros.html">Sobre Nosotros</a></li>
-        <li><a href="secciones/contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Cafetería Solar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header (Inicio) -->
+  <header id="inicio" class="vh-100 d-flex align-items-center text-center text-white" style="background: url('imagenes/header-bg.jpg') no-repeat center center/cover;">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Bienvenidos a Cafetería Solar</h1>
+      <p class="lead">Donde el café y la calidez se encuentran.</p>
+      <a href="#galeria" class="btn btn-primary btn-lg mt-3">Descubre Más</a>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>Bienvenido a la Cafetería Solar</h2>
-      <p>El rincón donde el café y el sol se abrazan.</p>
-    </section>
-  </main>
+  <!-- Sección Galería -->
+  <section id="galeria" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Galería</h2>
+      <div class="row g-4">
+        <!-- Tarjetas de imágenes de ejemplo -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="imagenes/galeria/imagen1.jpg" class="card-img-top" alt="Imagen 1">
+            <div class="card-body">
+              <p class="card-text">Ambiente 1</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="imagenes/galeria/imagen2.jpg" class="card-img-top" alt="Imagen 2">
+            <div class="card-body">
+              <p class="card-text">Ambiente 2</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="imagenes/galeria/imagen3.jpg" class="card-img-top" alt="Imagen 3">
+            <div class="card-body">
+              <p class="card-text">Ambiente 3</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    <p>&copy; 2025 Cafetería Solar. Todos los derechos reservados.</p>
+  <!-- Sección Sobre Nosotros -->
+  <section id="sobre-nosotros" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Sobre Nosotros</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <img src="imagenes/logo.jpg" class="img-fluid rounded" alt="Logo de Cafetería Solar">
+        </div>
+        <div class="col-md-6">
+          <p class="lead">Cafetería Solar es un espacio dedicado a la pasión por el café, la creatividad y el confort. Nuestro equipo está comprometido en ofrecer experiencias únicas y ambientes acogedores.</p>
+          <p>Con un menú especial y una atención personalizada, buscamos que cada visita se sienta como una experiencia inolvidable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Contacto -->
+  <section id="contacto" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Contacto</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <form id="contactForm">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" placeholder="Escribe tu nombre" required>
+            </div>
+            <div class="mb-3">
+              <label for="correo" class="form-label">Correo Electrónico</label>
+              <input type="email" class="form-control" id="correo" placeholder="nombre@ejemplo.com" required>
+            </div>
+            <div class="mb-3">
+              <label for="mensaje" class="form-label">Mensaje</label>
+              <textarea class="form-control" id="mensaje" rows="4" placeholder="Tu mensaje" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Enviar Mensaje</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 Cafetería Solar. Todos los derechos reservados.</p>
+    </div>
   </footer>
+
+  <!-- Bootstrap Bundle con Popper -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OPBBYjg98xkPIzFKJ8Dk8j8kCbb/RbJ7khdLQ6j5bBfAeR6I4f/m7Kyv3p/2hY/a"
+    crossorigin="anonymous"
+  ></script>
+  <!-- Script personalizado -->
+  <script src="js/script.js"></script>
 </body>
 </html>
-

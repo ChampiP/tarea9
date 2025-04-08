@@ -1,0 +1,48 @@
+/* Estilos Globales */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 70px; /* Espacio para el navbar fijo */
+}
+
+/* Navbar personalizado */
+.navbar-brand {
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+/* Header (Inicio) */
+header {
+  background: #333;
+  position: relative;
+}
+
+/* Superponer color semi-transparente sobre el header (opcional) */
+header::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+/* Secciones */
+section {
+  padding: 60px 0;
+}
+
+/* Footer */
+footer {
+  font-size: 0.9rem;
+}
+
+/* Ejemplo de animación para elementos al hacer scroll (podrías integrarla con JS) */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-in-out;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: none;
+}
