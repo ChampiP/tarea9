@@ -1,48 +1,234 @@
-/* Estilos Globales */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin-top: 70px; /* Espacio para el navbar fijo */
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-/* Navbar personalizado */
-.navbar-brand {
-  font-size: 1.8rem;
-  letter-spacing: 1px;
+/* Navbar */
+.navbar {
+    position: fixed;
+    width: 100%;
+    padding: 20px 50px;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Header (Inicio) */
-header {
-  background: #333;
-  position: relative;
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
 }
 
-/* Superponer color semi-transparente sobre el header (opcional) */
-header::before {
-  content: "";
-  background: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+.nav-links {
+    display: flex;
+    gap: 30px;
 }
 
-/* Secciones */
-section {
-  padding: 60px 0;
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
-/* Footer */
-footer {
-  font-size: 0.9rem;
+.nav-links a:hover {
+    color: #f39c12;
 }
 
-/* Ejemplo de animación para elementos al hacer scroll (podrías integrarla con JS) */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease-in-out;
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('img/hero-bg.jpg') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
 }
 
-.fade-in.appear {
-  opacity: 1;
-  transform: none;
+.hero-content h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.cta-btn {
+    padding: 15px 40px;
+    font-size: 1.2em;
+    background: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.cta-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Servicios */
+.services {
+    padding: 100px 50px;
+    background: #f9f9f9;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.service-card i {
+    font-size: 3em;
+    color: #f39c12;
+    margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Advantages Section */
+.advantages {
+    padding: 5rem 0;
+    background: #f8f9fa;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.advantage-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.advantage-card:hover {
+    transform: translateY(-10px);
+}
+
+.advantage-icon {
+    font-size: 2.5rem;
+    color: #f39c12;
+    margin-bottom: 1.5rem;
+}
+
+.progress-container {
+    background: #e9ecef;
+    border-radius: 20px;
+    height: 20px;
+    margin: 1rem 0;
+}
+
+.progress-bar {
+    background: #27ae60;
+    height: 100%;
+    border-radius: 20px;
+    position: relative;
+    transition: width 1s ease-in-out;
+}
+
+.progress-bar span {
+    position: absolute;
+    right: 10px;
+    color: white;
+    font-size: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 5rem 0;
+    background: #fff;
+}
+
+.testimonial-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.testimonial-slide {
+    min-width: 100%;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.client-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.client-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rating {
+    color: #f39c12;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .testimonial-slide {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .client-photo {
+        width: 100px;
+        height: 100px;
+    }
 }
