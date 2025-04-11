@@ -1,0 +1,82 @@
+#Contacto{
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+/*Information de Porque Contactarnos */
+.infoContactanos h1{
+    color: #f39c12ed;
+}
+.infoContactanos{
+    
+    width: 48%;
+    padding:30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.imagenCon{
+    width: 96%;
+    display: block;
+    margin: 0 auto;
+}
+/*Formulario*/
+.formulario{
+    
+    width: 48%;
+    padding:30px;
+}
+.formulario form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario input,
+.formulario textarea {
+    background-color: #f2f2f2;
+    border: none;
+    padding: 20px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    resize: none;
+}
+input:focus,
+textarea:focus {
+    
+    border: 2px solid #ca7e02; /* Borde de color cuando está seleccionado */
+}
+
+.formulario input::placeholder,
+.formulario textarea::placeholder {
+    color: #777;
+}
+
+.formulario button {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.formulario button:hover {
+    background-color: #ca7e02;
+}
+/*Informacion de Contacto*/
+.infoContacto{
+    width: 97%;
+    padding:30px;   
+
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 20px; /* Espaciado entre columnas y filas */
+    align-items: start
+}
