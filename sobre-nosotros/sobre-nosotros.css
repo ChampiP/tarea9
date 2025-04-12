@@ -1,0 +1,719 @@
+/* Estilos generales */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #e74c3c;
+  --accent-color: #3498db;
+  --light-color: #ecf0f1;
+  --dark-color: #2c3e50;
+  --text-color: #333;
+  --text-light: #7f8c8d;
+}
+
+/* Hero Section - Animado */
+.hero-sobre-nosotros {
+  background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+  color: white;
+  padding: 8rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-sobre-nosotros h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards 0.5s;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-sobre-nosotros p {
+  font-size: 1.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards 0.8s;
+  margin-bottom: 2rem;
+}
+
+/* Historia Section */
+.historia {
+  padding: 5rem 0;
+  background-color: var(--light-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.historia h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.historia h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--secondary-color);
+  transform: scaleX(0);
+  transform-origin: right;
+  animation: lineGrow 1s ease forwards 1.5s;
+}
+
+.historia-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+}
+
+.historia-texto {
+  flex: 1;
+  min-width: 300px;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: fadeInRight 1s ease forwards 1s;
+}
+
+.historia-texto p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  font-size: 1.1rem;
+}
+
+.historia-texto p:first-child {
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+.historia-imagen {
+  flex: 1;
+  min-width: 300px;
+  opacity: 0;
+  transform: translateX(50px);
+  animation: fadeInLeft 1s ease forwards 1s;
+  position: relative;
+}
+
+.historia-imagen img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.historia-imagen::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 3px solid var(--secondary-color);
+  border-radius: 10px;
+  top: -15px;
+  left: -15px;
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.historia-imagen:hover::before {
+  opacity: 1;
+  top: -10px;
+  left: -10px;
+}
+
+.historia-imagen:hover img {
+  transform: scale(1.02);
+  box-shadow: 0 25px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Animaciones */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes lineGrow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Efectos hover para texto */
+.historia-texto p {
+  position: relative;
+  padding-left: 20px;
+}
+
+.historia-texto p::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.historia-texto p:hover::before {
+  transform: scale(1.5);
+  background-color: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-sobre-nosotros {
+    padding: 5rem 1rem;
+  }
+  
+  .hero-sobre-nosotros h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-sobre-nosotros p {
+    font-size: 1.2rem;
+  }
+  
+  .historia-content {
+    flex-direction: column;
+  }
+  
+  .historia-texto, .historia-imagen {
+    min-width: 100%;
+  }
+  
+  .historia h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-sobre-nosotros h1 {
+    font-size: 2rem;
+  }
+  
+  .historia-texto p {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  padding-top: 80px; /* Deja espacio suficiente para que el navbar no tape el contenido */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #ffffff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #000;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navbar .logo {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #000;
+}
+
+.nav-links {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-links a {
+  color: #000;
+  text-decoration: none;
+  font-size: 1em;
+  padding: 10px 15px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffd700;
+}
+
+/* Hero Section */
+.hero-sobre-nosotros {
+  background-image: url('img/edificio.jpeg');
+  background-size: cover;
+  background-position: center;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 100px 0;
+}
+
+.hero-sobre-nosotros h1 {
+  font-size: 3.5em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-sobre-nosotros p {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+/* Historia */
+.historia {
+  background-color: #ffffff;
+  padding: 80px 0;
+}
+
+.historia h2 {
+  font-size: 2.8em;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.historia-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.historia-texto {
+  flex: 1;
+  font-size: 1.2em;
+  line-height: 1.8;
+  color: #555;
+}
+
+.historia-imagen img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Misión, Visión y Valores */
+.mvv {
+  background-color: #f7f7f7;
+  padding: 60px 0;
+}
+
+.mvv h2 {
+  font-size: 2.8em;
+  text-align: center;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.mvv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.mvv-card {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.mvv-card:hover {
+  transform: translateY(-5px);
+}
+
+.mvv-card i {
+  font-size: 3em;
+  color: #FFA500; /* Cambiado a naranja */
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.mvv-card i:hover {
+  transform: scale(1.2);
+}
+
+.mvv-card h3 {
+  font-size: 1.8em;
+  color: #333;
+}
+
+.mvv-card p {
+  font-size: 1.1em;
+  color: #555;
+}
+
+/* Equipo */
+.equipo {
+  background-color: #ffffff;
+  padding: 80px 0;
+}
+
+.equipo h2 {
+  font-size: 2.8em;
+  text-align: center;
+  color: #333;
+}
+
+.equipo p {
+  font-size: 1.2em;
+  color: #555;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.equipo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.miembro-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 30px;
+}
+
+.miembro-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.miembro-card h3 {
+  font-size: 1.6em;
+  margin-bottom: 10px;
+}
+
+.miembro-card p {
+  font-size: 1.1em;
+  color: #555;
+}
+
+.miembro-card .descripcion {
+  font-size: 1em;
+  color: #888;
+  margin-top: 10px;
+}
+
+/* CTA */
+.cta-final {
+  background-color: #005f73;
+  color: white;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.cta-final h2 {
+  font-size: 2.8em;
+  margin-bottom: 20px;
+}
+
+.cta-final p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  background-color: #ffd700;
+  color: #333;
+  padding: 15px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #ff9900;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer .social-links {
+  margin-top: 20px;
+}
+
+.footer .social-links a {
+  color: #fff;
+  font-size: 1.5em;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.footer .social-links a:hover {
+  color: #ffd700;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Tipografía general */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sección Obras Realizadas */
+.obras-realizadas {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f9f9f9, #eaeaea);
+  color: #333;
+}
+
+.obras-realizadas .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.obras-realizadas h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #1e3a8a;
+  position: relative;
+  display: inline-block;
+}
+
+.obras-realizadas h2::after {
+  content: '';
+  width: 60%;
+  height: 4px;
+  background-color: #001df9;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.obras-realizadas p {
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #555;
+}
+
+/* Grid de obras */
+.obras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 0 10px;
+}
+
+/* Tarjeta individual */
+.obra-card {
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.obra-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.obra-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.obra-card:hover img {
+  transform: scale(1.05);
+}
+
+.obra-card h3 {
+  font-size: 1.5rem;
+  margin: 20px 0 10px;
+  color: #1f2937;
+}
+
+.obra-card p {
+  font-size: 1rem;
+  padding: 0 20px 20px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Modal de imagen */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+  animation: fadeIn 0.3s ease;
+}
+
+.image-modal .modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+  animation: zoomIn 0.4s ease;
+}
+
+.image-modal .close-btn {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.image-modal .close-btn:hover {
+  color: #ccc;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes zoomIn {
+  from {transform: scale(0.8);}
+  to {transform: scale(1);}
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .obras-realizadas h2 {
+      font-size: 2rem;
+  }
+  .obras-realizadas p {
+      font-size: 1rem;
+  }
+}
